@@ -1,0 +1,37 @@
+{
+  "name": "commafy-anything",
+  "version": "1.0.0",
+  "description": "Adds comma's to a number. A simple and small integration",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "typings": "types/index.d.ts",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "ava",
+    "rollup": "rollup -c build/rollup.js",
+    "build": "npm run rollup && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mesqueeb/commafy-anything.git"
+  },
+  "keywords": [
+    "comma",
+    "comma's",
+    "commafy",
+    "number"
+  ],
+  "author": "Luca Ban - Mesqueeb",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mesqueeb/commafy-anything/issues"
+  },
+  "homepage": "https://github.com/mesqueeb/commafy-anything#readme",
+  "devDependencies": {
+    "ava": "^2.0.0",
+    "rollup-plugin-typescript2": "^0.21.1",
+    "typescript": "^3.5.1"
+  }
+}

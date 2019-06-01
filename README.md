@@ -44,9 +44,9 @@ commafy(1.0000001) === '1.0000001'
 // spaced decimals:
 const options = {spacedDecimals: true}
 commafy(1.0001, options) === '1.0001'
-commafy(1.00001, options) === '1.00001'
-commafy(1.000001, options) === '1.000001'
-commafy(1.0000001, options) === '1.0000001'
+commafy(1.00001, options) === '1.000 01'
+commafy(1.000001, options) === '1.000 001'
+commafy(1.0000001, options) === '1.000 0001'
 ```
 
 ### Strip decimals

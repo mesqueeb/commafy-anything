@@ -1,6 +1,6 @@
 {
   "name": "commafy-anything",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Adds comma's to a number. A simple and small integration",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",

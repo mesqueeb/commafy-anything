@@ -32,6 +32,18 @@ commafy(1000000) === '1,000,000'
 // etc.
 ```
 
+### Thousands
+
+```js
+// default:
+commafy(1000) === '1000'
+
+// thousands:
+const options = {thousands: true}
+commafy(1000, options) === '1,000'
+// etc.
+```
+
 ### Spaced decimals
 
 ```js

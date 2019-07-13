@@ -1,6 +1,6 @@
 {
   "name": "commafy-anything",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Adds comma's to a number. A simple and small integration",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -30,8 +30,8 @@
   },
   "homepage": "https://github.com/mesqueeb/commafy-anything#readme",
   "devDependencies": {
-    "ava": "^2.0.0",
-    "rollup-plugin-typescript2": "^0.21.1",
-    "typescript": "^3.5.1"
+    "ava": "^2.2.0",
+    "rollup-plugin-typescript2": "^0.21.2",
+    "typescript": "^3.5.3"
   }
 }

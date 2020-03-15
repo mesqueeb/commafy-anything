@@ -1,4 +1,4 @@
-type AnyObject = {[key: string]: any}
+type AnyObject = { [key: string]: any }
 /**
  * Adds comma's to a number
  *
@@ -9,11 +9,7 @@ type AnyObject = {[key: string]: any}
  */
 export default function commafy (
   num: number,
-  {
-    stripDecimals = false,
-    spacedDecimals = false,
-    thousands = false,
-  }: AnyObject = {}
+  { stripDecimals = false, spacedDecimals = false, thousands = false }: AnyObject = {}
 ): string {
   const str = num.toString().split('.')
   const minLength = thousands ? 4 : 5

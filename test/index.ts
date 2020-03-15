@@ -1,5 +1,5 @@
 import test from 'ava'
-import commafy from '../dist/index.cjs'
+import commafy from '../src/index'
 
 test('defaults', t => {
   t.is(commafy(1), '1')
@@ -22,22 +22,13 @@ test('thousands', t => {
   t.is(commafy(9999), '9999')
   t.is(commafy(1000.0001), '1000.0001')
 
-  const options = {thousands: true}
+  const options = { thousands: true }
   t.is(commafy(1000, options), '1,000')
   t.is(commafy(9999, options), '9,999')
   t.is(commafy(1000.0001, options), '1,000.0001')
-  t.is(
-    commafy(1000.0001, {thousands: true, spacedDecimals: false}),
-    '1,000.0001'
-  )
-  t.is(
-    commafy(1000.0001, {thousands: true, spacedDecimals: true}),
-    '1,000.000 1'
-  )
-  t.is(
-    commafy(1000.0001, {thousands: false, spacedDecimals: true}),
-    '1000.0001'
-  )
+  t.is(commafy(1000.0001, { thousands: true, spacedDecimals: false }), '1,000.0001')
+  t.is(commafy(1000.0001, { thousands: true, spacedDecimals: true }), '1,000.000 1')
+  t.is(commafy(1000.0001, { thousands: false, spacedDecimals: true }), '1000.0001')
 })
 
 test('defaults - decimals', t => {
@@ -57,7 +48,7 @@ test('defaults - decimals', t => {
 })
 
 test('spaced decimals', t => {
-  const options = {spacedDecimals: true}
+  const options = { spacedDecimals: true }
   t.is(commafy(1, options), '1')
   t.is(commafy(1.1, options), '1.1')
   t.is(commafy(1.01, options), '1.01')
@@ -74,7 +65,7 @@ test('spaced decimals', t => {
 })
 
 test('strip decimals', t => {
-  const options = {stripDecimals: true}
+  const options = { stripDecimals: true }
   t.is(commafy(1, options), '1')
   t.is(commafy(1.1, options), '1')
   t.is(commafy(1.01, options), '1')

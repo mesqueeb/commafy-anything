@@ -30,8 +30,9 @@
   },
   "homepage": "https://github.com/mesqueeb/commafy-anything#readme",
   "devDependencies": {
-    "ava": "^2.2.0",
+    "ava": "^2.4.0",
+    "rollup": "^1.32.1",
     "rollup-plugin-typescript2": "^0.21.2",
-    "typescript": "^3.5.3"
+    "typescript": "^3.8.3"
   }
 }

@@ -1,18 +1,18 @@
-type AnyObject = { [key: string]: any }
 /**
  * Adds comma's to a number
  *
  * @export
- * @param {(string|number)} num the number to commafy
- * @param {object} [{ stripDecimals = false, spacedDecimals = false }={}] the options
+ * @param {(string | number)} num the number to commafy
+ * @param {{ stripDecimals?: boolean, spacedDecimals?: boolean, thousandsComma?: boolean }} [options] By default thousandsComma is enabled, if disabled it shows `1000` without comma (but `10,000` with)
  * @returns {string} eg. '1,000,000'
  */
-export default function commafy (
+export function commafy (
   num: number,
-  { stripDecimals = false, spacedDecimals = false, thousands = false }: AnyObject = {}
+  options?: { stripDecimals?: boolean, spacedDecimals?: boolean, thousandsComma?: boolean }
 ): string {
+  const { stripDecimals = false, spacedDecimals = false, thousandsComma = true } = options || {}
   const str = num.toString().split('.')
-  const minLength = thousands ? 4 : 5
+  const minLength = thousandsComma ? 4 : 5
   if (str[0].length >= minLength) {
     str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g, '$1,')
   }

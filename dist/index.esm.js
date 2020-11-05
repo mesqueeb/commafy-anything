@@ -2,14 +2,14 @@
  * Adds comma's to a number
  *
  * @export
- * @param {(string|number)} num the number to commafy
- * @param {object} [{ stripDecimals = false, spacedDecimals = false }={}] the options
+ * @param {(string | number)} num the number to commafy
+ * @param {{ stripDecimals?: boolean, spacedDecimals?: boolean, thousandsComma?: boolean }} [options] By default thousandsComma is enabled, if disabled it shows `1000` without comma (but `10,000` with)
  * @returns {string} eg. '1,000,000'
  */
-function commafy(num, _a) {
-    var _b = _a === void 0 ? {} : _a, _c = _b.stripDecimals, stripDecimals = _c === void 0 ? false : _c, _d = _b.spacedDecimals, spacedDecimals = _d === void 0 ? false : _d, _e = _b.thousands, thousands = _e === void 0 ? false : _e;
+function commafy(num, options) {
+    var _a = options || {}, _b = _a.stripDecimals, stripDecimals = _b === void 0 ? false : _b, _c = _a.spacedDecimals, spacedDecimals = _c === void 0 ? false : _c, _d = _a.thousandsComma, thousandsComma = _d === void 0 ? true : _d;
     var str = num.toString().split('.');
-    var minLength = thousands ? 4 : 5;
+    var minLength = thousandsComma ? 4 : 5;
     if (str[0].length >= minLength) {
         str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g, '$1,');
     }
@@ -21,4 +21,4 @@ function commafy(num, _a) {
     return str.join('.');
 }
 
-export default commafy;
+export { commafy };

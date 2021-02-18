@@ -23,7 +23,7 @@ U built this package because I needed to add comma's to numbers! And I wanted to
 ## Usage
 
 ```js
-import commafy from 'commafy-anything'
+import { commafy } from 'commafy-anything'
 
 commafy(1000) === '1,000'
 commafy(10000) === '10,000'

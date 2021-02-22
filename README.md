@@ -23,9 +23,9 @@ U built this package because I needed to add comma's to numbers! And I wanted to
 ## Usage
 
 ```js
-import commafy from 'commafy-anything'
+import { commafy } from 'commafy-anything'
 
-commafy(1000) === '1000'
+commafy(1000) === '1,000'
 commafy(10000) === '10,000'
 commafy(100000) === '100,000'
 commafy(1000000) === '1,000,000'
@@ -36,11 +36,12 @@ commafy(1000000) === '1,000,000'
 
 ```js
 // default:
-commafy(1000) === '1000'
+commafy(1000) === '1,000'
 
 // thousands:
-const options = {thousands: true}
-commafy(1000, options) === '1,000'
+const options = {thousandsComma: false}
+commafy(1000, options) === '1000'
+commafy(10000, options) === '10,000'
 ```
 
 ### Spaced decimals
@@ -79,7 +80,7 @@ I'm using simple regular expressions. The source code is in TypeScript, but the 
 ```js
 function commafy (num, {stripDecimals, spacedDecimals} = {}) {
   const str = num.toString().split('.')
-  if (str[0].length >= 5) {
+  if (str[0].length >= 4) {
     str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g, '$1,')
   }
   if (stripDecimals) return str[0]

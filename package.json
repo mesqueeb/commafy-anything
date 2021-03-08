@@ -5,7 +5,7 @@
   "description": "Adds comma's to a number. A simple and small integration",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
-  "typings": "types/index.d.ts",
+  "types": "types/index.d.ts",
   "directories": {
     "test": "test"
   },

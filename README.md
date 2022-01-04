@@ -1,5 +1,8 @@
 # Commafy anything 🍡
 
+<a href="https://www.npmjs.com/package/commafy-anything"><img src="https://img.shields.io/npm/v/commafy-anything.svg" alt="Total Downloads"></a>
+<a href="https://www.npmjs.com/package/commafy-anything"><img src="https://img.shields.io/npm/dw/commafy-anything.svg" alt="Latest Stable Version"></a>
+
 ```
 npm i commafy-anything
 ```

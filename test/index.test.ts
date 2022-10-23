@@ -51,6 +51,10 @@ test('K', () => {
   expect(commafy(19999999999, {K: true})).toEqual('20,000,000K')
   expect(commafy(199999999999, {K: true})).toEqual('200,000,000K')
   expect(commafy(1999999999999, {K: true})).toEqual('2,000,000,000K')
+  expect(commafy(1955, {K: true})).toEqual('2K')
+  expect(commafy(10955, {K: true})).toEqual('11K')
+  expect(commafy(100955, {K: true})).toEqual('101K')
+  expect(commafy(1000955, {K: true})).toEqual('1,001K')
 })
 
 test('thousands', () => {

@@ -7,11 +7,11 @@
 npm i commafy-anything
 ```
 
-Adds comma's to a number. A simple and small integration.
+Return a number as string with `,` or `K`. A simple and small integration.
 
 ## Motivation
 
-U built this package because I needed to add comma's to numbers! And I wanted to build it myself. 😄
+U built this package because I needed to add comma's and K to numbers! And I wanted to build it myself. 😄
 
 ## Meet the family
 
@@ -35,19 +35,46 @@ commafy(1000000) === '1,000,000'
 // etc.
 ```
 
+### K
+
+You can show numbers as 1K.
+
+```js
+const options = { K: true }
+// when smaller than 1000 will be shown as is, without K
+commafy(123, options) === '123'
+
+// when larger than 1000 it will round up/down behind the K
+commafy(1234, options) === '1K'
+commafy(10234, options) === '10K'
+commafy(100234, options) === '100K'
+commafy(1000234, options) === '1,000K'
+
+commafy(1955, options) === '2K'
+commafy(10955, options) === '11K'
+commafy(100955, options) === '101K'
+commafy(1000955, options) === '1,001K'
+```
+
 ### Thousands
+
+You can disable a comma to be added when the number is between `1000` ~ `9999`.
 
 ```js
 // default:
 commafy(1000) === '1,000'
 
-// thousands:
-const options = {thousandsComma: false}
+const options = { thousandsComma: false }
 commafy(1000, options) === '1000'
+commafy(9999, options) === '9999'
+
+// beyond 9999 it will always have a comma
 commafy(10000, options) === '10,000'
 ```
 
 ### Spaced decimals
+
+You can add spaces to decimals.
 
 ```js
 // default:
@@ -57,7 +84,7 @@ commafy(1.000001) === '1.000001'
 commafy(1.0000001) === '1.0000001'
 
 // spaced decimals:
-const options = {spacedDecimals: true}
+const options = { spacedDecimals: true }
 commafy(1.0001, options) === '1.0001'
 commafy(1.00001, options) === '1.000 01'
 commafy(1.000001, options) === '1.000 001'
@@ -66,12 +93,14 @@ commafy(1.0000001, options) === '1.000 0001'
 
 ### Strip decimals
 
+You can add strip away decimals.
+
 ```js
 // default:
 commafy(1.0001) === '1.0001'
 
 // strip decimals:
-const options = {stripDecimals: true}
+const options = { stripDecimals: true }
 commafy(1.001, options) === '1'
 commafy(1.999, options) === '1'
 ```

@@ -1,6 +1,6 @@
 {
   "name": "commafy-anything",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "Adds comma's to a number. A simple and small integration",
   "type": "module",
   "sideEffects": false,

@@ -41,5 +41,5 @@
   },
   "homepage": "https://github.com/mesqueeb/commafy-anything#readme",
   "bugs": "https://github.com/mesqueeb/commafy-anything/issues",
-  "packageManager": "pnpm@11.27.0"
+  "packageManager": "pnpm@12.4.2"
 }

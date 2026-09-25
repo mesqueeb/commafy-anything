@@ -1,0 +1,12 @@
+{
+  "name": "@mesqueeb/commafy-anything",
+  "version": "4.0.3",
+  "exports": "./src/index.ts",
+  "publish": {
+    "include": [
+      "src/**",
+      "README.md",
+      "LICENSE"
+    ]
+  }
+}

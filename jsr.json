@@ -1,8 +1,13 @@
 {
   "name": "@mesqueeb/commafy-anything",
   "version": "4.0.4",
+  "license": "MIT",
   "exports": "./src/index.ts",
   "publish": {
-    "include": ["src/**", "README.md", "LICENSE"]
+    "include": [
+      "src/**",
+      "README.md",
+      "LICENSE"
+    ]
   }
 }
